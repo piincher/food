@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import {withNavigation} from 'react-navigation'
 import { View, Text, StyleSheet,ScrollView } from 'react-native';
 import SearchBar from '../components/SearchBar';
 import ResultsList from '../components/ResultsList'
@@ -19,9 +20,9 @@ const SearchScreen = () => {
           {errorMessage ? <Text>{errorMessage}</Text> :null}
       
         <ScrollView>
-          <ResultsList results={filterResultsByPrice('$')} title="COST EFFECTIVES"/>
-          <ResultsList results={filterResultsByPrice('$$')} title="BIT PRICIERS"/>
-        <ResultsList results={filterResultsByPrice('$$$')} title="BIG SPENDER" />
+          <ResultsList  results={filterResultsByPrice('$')} title="COST EFFECTIVES"/>
+          <ResultsList  results={filterResultsByPrice('$$')} title="BIT PRICIERS"/>
+        <ResultsList  results={filterResultsByPrice('$$$')} title="BIG SPENDER" />
         </ScrollView>
     </>
   );
@@ -29,4 +30,4 @@ const SearchScreen = () => {
 
 const styles = StyleSheet.create({});
 
-export default SearchScreen;
+export default SearchScreen
